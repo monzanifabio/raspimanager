@@ -23,7 +23,8 @@ echo "    1) Run update and upgrade"
 echo "    2) Install Git"
 echo "    3) Install Python3"
 echo "    4) Install Screen"
-echo "    5) Setup a LAMP server"
+echo "    5) Install Pihole"
+echo "    -) Setup a LAMP server"
 echo "    ip) Show my Pi ip address"
 echo "    q) Exit"
 read -p "    Select an option from the menu: " ANSWER
@@ -31,6 +32,7 @@ case "$ANSWER" in
   1) clear
   while true
   do
+    #========================================================= UPDATES & UPGRADES
   echo "     -Updating your Pi
       By running this command I will run $(tput bold)apt-get update$(tput sgr0) and $(tput bold)apt-get upgrade$(tput sgr0).
       It is useful when you have a newly installed version of Raspbian or if you haven't run update recently."
@@ -38,7 +40,8 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, running updates... \n"
-        #
+        #sudo apt-get update
+        #sudo apt-get upgrade -y
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -49,8 +52,8 @@ case "$ANSWER" in
       esac
     done
   sleep 0.5
-  #sudo apt-get update
   ;;
+  #========================================================= INSTALL GIT
   2) clear
   echo "     -Installing Git
       By running this command I will install Git.
@@ -70,7 +73,9 @@ case "$ANSWER" in
         echo "    \nPlease enter y/yes or n/no\n"
         ;;
       esac
-  sleep 0.5 ;;
+  sleep 0.5
+  ;;
+  #========================================================= INSTALL PYTHON3
   3) clear
   echo "     -Installing Python3
       By running this command I will install Python3.
@@ -81,7 +86,7 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Python3... \n"
-        #
+        #sudo apt-get install python3
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -91,8 +96,8 @@ case "$ANSWER" in
         ;;
       esac
   sleep 0.5
-  #sudo apt-get install python3
    ;;
+   #========================================================= INSTALL SCREEN
    4) clear
    echo "     -Installing
        By running this command I will install ."
@@ -111,6 +116,7 @@ case "$ANSWER" in
        esac
    sleep 0.5
     ;;
+    #========================================================= INSTALL PIHOLE
     5) clear
     echo "     -Installing
         By running this command I will install ."
