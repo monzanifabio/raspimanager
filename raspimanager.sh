@@ -30,8 +30,6 @@ echo "    q) Exit"
 read -p "    Select an option from the menu: " ANSWER
 case "$ANSWER" in
   1) clear
-  while true
-  do
     #========================================================= UPDATES & UPGRADES
   echo "     -Updating your Pi
       By running this command I will run $(tput bold)apt-get update$(tput sgr0) and $(tput bold)apt-get upgrade$(tput sgr0).
@@ -50,7 +48,6 @@ case "$ANSWER" in
         echo "    \nPlease enter y/yes or n/no\n"
         ;;
       esac
-    done
   sleep 0.5
   ;;
   #========================================================= INSTALL GIT
@@ -64,7 +61,7 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Git... \n"
-        #
+        #sudo apt install git
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -99,13 +96,16 @@ case "$ANSWER" in
    ;;
    #========================================================= INSTALL SCREEN
    4) clear
-   echo "     -Installing
-       By running this command I will install ."
+   echo "     -Installing Screen
+       By running this command I will install Screen.
+       When you do something in ssh, if you close the ssh session it kills the process.
+       Screen allows you to disconnect and reconnect the instance containing the process.
+       You can even log off the ssh session altogether and connect from a different computer."
        read -p "      Do you want to continue? y/n " CONTINUE
        case "$CONTINUE" in
          [yY] | [yY][eE][sS])
-         echo "    Ok, installing ... \n"
-         #
+         echo "    Ok, installing Screen ... \n"
+         #sudo apt-get install screen
          ;;
          [nN] | [nN][oO])
          echo "\n No worries... \n"
@@ -118,12 +118,16 @@ case "$ANSWER" in
     ;;
     #========================================================= INSTALL PIHOLE
     5) clear
-    echo "     -Installing
-        By running this command I will install ."
+    echo "     -Installing Pihole
+        By running this command I will install Pihole.
+        Network-wide Ad Blocking.
+        A black hole for Internet advertisements.
+        Before installing please visit the website for step by step configuration.
+        https://pi-hole.net"
         read -p "      Do you want to continue? y/n " CONTINUE
         case "$CONTINUE" in
           [yY] | [yY][eE][sS])
-          echo "    Ok, installing ... \n"
+          echo "    Ok, installing Pihole... \n"
           #
           ;;
           [nN] | [nN][oO])
