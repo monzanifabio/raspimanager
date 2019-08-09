@@ -155,6 +155,23 @@ case "$ANSWER" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Apache first... \n"
         #sudo apt-get install apache2 -y
+        hostname
+        sleep 0.5
+        echo "    Done
+        Next up is PHP"
+        sleep 1
+        #sudo apt-get install php -y
+        hostname
+        sleep 0.5
+        echo "    Cool
+        Let's install MySQL now..."
+        sleep 1
+        #sudo apt-get install mysql-server php-mysql -y
+        sleep 0.5
+        echo "    Restarting Apache..."
+        #sudo service apache2 restart
+        sleep 1
+        echo "    You're now good to go!"
         ;;
         [nN] | [nN][oO])
         echo "\n Abort mission! \n"
