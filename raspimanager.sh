@@ -24,7 +24,7 @@ echo "    2) Install Git"
 echo "    3) Install Python3"
 echo "    4) Install Screen"
 echo "    5) Install Pihole"
-echo "    -) Setup a LAMP server"
+echo "    6) Setup a LAMP server"
 echo "    ip) Show my Pi ip address"
 echo "    q) Exit"
 read -p "    Select an option from the menu: " ANSWER
@@ -143,6 +143,28 @@ case "$ANSWER" in
      hostname -I
      sleep 0.5
       ;;
+      #========================================================= INSTALL PIHOLE
+      6) clear
+      echo "    -Install a LAMP server (Linux, Apache, MySQL, PHP)
+      By running this command we will install and configure:
+      Apache
+      PHP
+      MySQL"
+      read -p "      Do you want to continue? y/n " CONTINUE
+      case "$CONTINUE" in
+        [yY] | [yY][eE][sS])
+        echo "    Ok, installing Apache first... \n"
+        #sudo apt-get install apache2 -y
+        ;;
+        [nN] | [nN][oO])
+        echo "\n Abort mission! \n"
+        ;;
+        *)
+        echo "    \nPlease enter y/yes or n/no\n"
+        ;;
+      esac
+  sleep 0.5
+   ;;
   q) exit ;;
 esac
 echo "    Press any key to go back"
