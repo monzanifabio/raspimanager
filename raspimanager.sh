@@ -105,7 +105,7 @@ case "$ANSWER" in
        case "$CONTINUE" in
          [yY] | [yY][eE][sS])
          echo "    Ok, installing pip... \n"
-         sudo apt-get install python3
+         sudo apt-get install python-pip
          ;;
          [nN] | [nN][oO])
          echo "\n No worries... \n"
