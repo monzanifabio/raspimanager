@@ -38,8 +38,8 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, running updates... \n"
-        #sudo apt-get update
-        #sudo apt-get upgrade -y
+        sudo apt-get update
+        sudo apt-get upgrade -y
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -61,7 +61,7 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Git... \n"
-        #sudo apt install git
+        sudo apt install git
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -83,7 +83,7 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Python3... \n"
-        #sudo apt-get install python3
+        sudo apt-get install python3
         ;;
         [nN] | [nN][oO])
         echo "\n No worries... \n"
@@ -105,7 +105,7 @@ case "$ANSWER" in
        case "$CONTINUE" in
          [yY] | [yY][eE][sS])
          echo "    Ok, installing Screen ... \n"
-         #sudo apt-get install screen
+         sudo apt-get install screen
          ;;
          [nN] | [nN][oO])
          echo "\n No worries... \n"
@@ -154,22 +154,22 @@ case "$ANSWER" in
       case "$CONTINUE" in
         [yY] | [yY][eE][sS])
         echo "    Ok, installing Apache first... \n"
-        #sudo apt-get install apache2 -y
+        sudo apt-get install apache2 -y
         hostname
         sleep 0.5
         echo "    Done
         Next up is PHP"
         sleep 1
-        #sudo apt-get install php -y
+        sudo apt-get install php -y
         hostname
         sleep 0.5
         echo "    Cool
         Let's install MySQL now..."
         sleep 1
-        #sudo apt-get install mysql-server php-mysql -y
+        sudo apt-get install mysql-server php-mysql -y
         sleep 0.5
         echo "    Restarting Apache..."
-        #sudo service apache2 restart
+        sudo service apache2 restart
         sleep 1
         echo "    You're now good to go!"
         ;;
