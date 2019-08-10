@@ -177,7 +177,9 @@ case "$ANSWER" in
       esac
   sleep 0.5
    ;;
-  q) exit ;;
+  q)
+  echo "Goodbye" 
+  exit ;;
 esac
 echo "    Press any key to go back"
 read INPUT
