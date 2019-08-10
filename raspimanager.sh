@@ -22,8 +22,8 @@ echo "
 echo "    1) Run update and upgrade"
 echo "    2) Install Git"
 echo "    3) Install Python3"
-echo "    4) Install Screen"
-echo "    5) Install Pihole"
+echo "    4) Install Python pip"
+echo "    5) Install Screen"
 echo "    6) Setup a LAMP server"
 echo "    ip) Show my Pi ip address"
 echo "    q) Exit"
@@ -94,8 +94,30 @@ case "$ANSWER" in
       esac
   sleep 0.5
    ;;
-   #========================================================= INSTALL SCREEN
+   #========================================================= INSTALL PIP
    4) clear
+   echo "     -Installing pip
+       By running this command I will install pip for Python.
+       PIP is a package manager for Python packages.
+       A package contains all the files you need for a module.
+       Modules are Python code libraries you can include in your project."
+       read -p "      Do you want to continue? y/n " CONTINUE
+       case "$CONTINUE" in
+         [yY] | [yY][eE][sS])
+         echo "    Ok, installing pip... \n"
+         sudo apt-get install python3
+         ;;
+         [nN] | [nN][oO])
+         echo "\n No worries... \n"
+         ;;
+         *)
+         echo "    \nPlease enter y/yes or n/no\n"
+         ;;
+       esac
+   sleep 0.5
+    ;;
+   #========================================================= INSTALL SCREEN
+   5) clear
    echo "     -Installing Screen
        By running this command I will install Screen.
        When you do something in ssh, if you close the ssh session it kills the process.
@@ -116,34 +138,7 @@ case "$ANSWER" in
        esac
    sleep 0.5
     ;;
-    #========================================================= INSTALL PIHOLE
-    5) clear
-    echo "     -Installing Pihole
-        By running this command I will install Pihole.
-        Network-wide Ad Blocking.
-        A black hole for Internet advertisements.
-        Before installing please visit the website for step by step configuration.
-        https://pi-hole.net"
-        read -p "      Do you want to continue? y/n " CONTINUE
-        case "$CONTINUE" in
-          [yY] | [yY][eE][sS])
-          echo "    Ok, installing Pihole... \n"
-          #
-          ;;
-          [nN] | [nN][oO])
-          echo "\n No worries... \n"
-          ;;
-          *)
-          echo "    \nPlease enter y/yes or n/no\n"
-          ;;
-        esac
-    sleep 0.5
-     ;;
-     ip) echo "     -Your Raspberry Pi ip address is: "
-     hostname -I
-     sleep 0.5
-      ;;
-      #========================================================= INSTALL PIHOLE
+      #========================================================= INSTALL LAMP
       6) clear
       echo "    -Install a LAMP server (Linux, Apache, MySQL, PHP)
       By running this command we will install and configure:

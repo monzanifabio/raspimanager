@@ -16,6 +16,7 @@ Currently available:
 - Run update and upgrade
 - Install Git
 - Install python3
+- Install pip
 - Install Screen
 - Install a LAMP server
 - Show my Pi ip address
