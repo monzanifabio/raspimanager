@@ -177,9 +177,14 @@ case "$ANSWER" in
       esac
   sleep 0.5
    ;;
+   #========================================================= SHOW IP
+   ip) clear
+   hostname -I
+   sleep 0.5
+    ;;
   q)
   echo "
-      Goodbye" 
+      Goodbye"
   exit ;;
 esac
 echo "    Press any key to go back"
