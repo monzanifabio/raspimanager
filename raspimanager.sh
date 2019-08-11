@@ -178,7 +178,8 @@ case "$ANSWER" in
   sleep 0.5
    ;;
   q)
-  echo "Goodbye" 
+  echo "
+      Goodbye" 
   exit ;;
 esac
 echo "    Press any key to go back"
